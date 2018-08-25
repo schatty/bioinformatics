@@ -1,2 +1,2 @@
 # bioinf_attic
-Various bioinformatics scripts and programs
+Attic for various bioinformatics scripts, courses and projects
