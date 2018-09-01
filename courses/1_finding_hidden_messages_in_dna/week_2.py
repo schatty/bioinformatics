@@ -24,6 +24,17 @@ def minimum_skew(s):
     return inds
 
 
+def maximum_skew(s):
+    """ Return indices at which skew function achieves its maximum """
+    diff_values = skew(s)
+    max_skew = max(diff_values)
+    inds = []
+    for i in range(len(s)):
+        if diff_values[i] == max_skew:
+            inds.append(i)
+    return inds
+
+
 def hamming_distance(s1, s2):
     """ Return number of mismatching symbols in the strings s1 and s2 """
     return sum(map(lambda i: s1[i] != s2[i], range(len(s1))))
@@ -160,5 +171,15 @@ if __name__ == "__main__":
     s = "ACGTTGCATGTCGCATGATGCATGAGAGCT"
     k = 4
     d = 1
+    #print(' '.join(frequent_words_with_mismatches_and_reverse_complements(s, k, d)))
 
-    print(' '.join(frequent_words_with_mismatches_and_reverse_complements(s, k, d)))
+    # Quiz 2
+    s1 = "CAGAAAGGAAGGTCCCCATACACCGACGCACCAGTTTA"
+    s2 = "CACGCCGTATGCATAAACGAGCCGCACGAACCAGAGAG"
+    print(hamming_distance(s1, s2))
+
+    print(maximum_skew("GCATACACTTCCCAGTAGGTACTG"))
+
+    print(approx_pattern_count("CGTGACAGTGTATGGGCATCTTT", "TGT", 1))
+
+    print(len(neighbours("CCAGTCAATG", 1)))
