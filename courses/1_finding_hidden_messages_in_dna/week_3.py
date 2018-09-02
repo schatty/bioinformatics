@@ -34,9 +34,9 @@ def count_motifs(motifs, laplace_rule=True):
     return count
 
 
-def score_motifs(motifs):
+def score_motifs(motifs, laplace_rule=True):
     """ Return score from list of motifs strings. """
-    counts = count_motifs(motifs)
+    counts = count_motifs(motifs, laplace_rule)
     score = 0
     for j in range(len(counts["A"])):
         max_val = max([counts[n][j] for n in "ACGT"])
